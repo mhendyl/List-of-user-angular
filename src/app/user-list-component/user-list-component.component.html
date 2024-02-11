@@ -1,0 +1,18 @@
+<div class="px-10 bg-[#F3F0EB]">
+  <h2 class="text-center font-semibold text-6xl mb-9">User List</h2>
+  <div *ngIf="loading" class="text-center">
+    <span>Loading ...</span>
+  </div>
+  <div *ngIf="!loading">
+    <div class="grid lg:grid-cols-4 sm:grid-cols-1">
+      <div *ngFor="let users of data" class="rounded-md border border-gray-400 shadow-md p-4 mr-2 mt-4">
+        <p class="text-lg font-semibold">{{users.name}}</p>
+        <p class="truncate">Address: {{users.address.street}}, {{users.address.suite}}, {{users.address.city}}, {{users.address.zipcode}}</p>
+        <p>Email: <a class="text-sky-500 underline" href="mailto:{{users.email}}">{{users.email}}</a></p>
+        <p>Phone: {{users.phone}}</p>
+        <p>Website: <a class="text-sky-500 underline" href="https://{{users.website}}" target="_blank">{{users.website}}</a></p>
+        <a class="text-sky-500 underline" routerLink="/details/{{users.id}}">Details >></a>
+      </div>
+    </div>
+  </div>
+</div>

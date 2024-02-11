@@ -1,0 +1,16 @@
+<div class="p-12 bg-[#F3F0EB]">
+  <div *ngIf="loading" class="text-center">
+    <span>Loading ...</span>
+  </div>
+  <div *ngIf="!loading">
+    <h2 class="text-center text-lg font-semibold">Details of {{data.name}}</h2>
+    <div class="lg:px-64 mt-12 sm:px-10 flex flex-col space-y-4">
+      <p>Full Name : <span class="font-bold">{{data.name}}</span></p>
+      <p>Address: {{data.address.street}}, {{data.address.suite}}, {{data.address.city}}, {{data.address.zipcode}}</p>
+      <p>Email: <a class="text-sky-500 underline" href="mailto:{{data.email}}">{{data.email}}</a></p>
+      <p>Phone: {{data.phone}}</p>
+      <p>Website: <a class="text-sky-500 underline" href="https://{{data.website}}" target="_blank">{{data.website}}</a></p>
+      <p>Company: {{data.company.name}}</p>
+    </div>
+  </div>
+</div>
